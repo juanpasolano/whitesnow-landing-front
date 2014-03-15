@@ -1,0 +1,17 @@
+{
+  "name": "USGS_Soild_website",
+  "version": "0.0.1",
+  "description": "USGS Soils Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-less": "~0.8.2",
+    "grunt-notify": "~0.2.17"
+  }
+}
