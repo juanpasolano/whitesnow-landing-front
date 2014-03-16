@@ -15,7 +15,7 @@ module.exports =  function(grunt){
 					paths: ["www/css", "www/css/less"]
 				},
 				files: {
-					'www/css/peep.css': 'www/css/less/peep.less'
+					'www/css/main.css': 'www/css/less/main.less'
 				}
 			}
 		},
