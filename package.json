@@ -1,12 +1,12 @@
 {
-  "name": "USGS_Soild_website",
+  "name": "html5_boilerplate",
   "version": "0.0.1",
-  "description": "USGS Soils Website",
+  "description": "html5 boilerplate",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Juan Pablo Solano",
   "license": "BSD-2-Clause",
   "devDependencies": {
     "grunt": "~0.4.1",
