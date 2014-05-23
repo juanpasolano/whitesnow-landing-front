@@ -3,11 +3,23 @@ module.exports =  function(grunt){
 	grunt.initConfig({
 
 		watch:{
+            js_app: {
+                files: ['www/js/app/**/*.js','www/js/app/*.js'],
+                tasks: ['concat:js', 'notify:js']
+            },
 			less:{
 				files:['www/css/less/*.less'],
 				tasks:['less', 'notify:less']
 			}
 		},
+
+
+        concat: {
+            js: {
+                src: ['www/js/app/**/*.js','www/js/app/*.js'],
+                dest: 'www/js/dist/built.js'
+            }
+        },
 
 		less:{
 			dist:{
@@ -26,6 +38,11 @@ module.exports =  function(grunt){
 					message: 'LESS files compiled'
 				}
 			},
+            js:{
+                options:{
+                    message: 'JS files compiled'
+                }
+            }
 		}
 
 });
@@ -33,6 +50,7 @@ module.exports =  function(grunt){
 
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-less');
+grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-notify');
 
 
