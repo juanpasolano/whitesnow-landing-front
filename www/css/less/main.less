@@ -1,5 +1,7 @@
 @import 'mixins.less';
-
+@import 'icons-font.less';
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400);
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
 
 /*This is the almighty clearfix*/
 .clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
@@ -8,15 +10,177 @@
 
 /*Some helper spacers*/
 .spacer (@index) when (@index > 0) {
-    .spacer-@{index} {
-      width: 100%;
-      height: 10px*@index;
-    }
-    .spacer(@index - 1);
+  .spacer-@{index} {
+    width: 100%;
+    height: 10px*@index;
+  }
+  .spacer(@index - 1);
 }
 .spacer(8);
 
 /*NG-CLOACK for angular hidding before it is time to dance*/
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+@ff: 'Alegreya Sans', "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+@green:#59c063;
+
+
+html{
+  font-size: 100%;
+  font-family: @ff;
+}
+body{
+  font-family: @ff;
+  font-weight: 100;
+}
+h1,h2,h3,h4,h5{
+  font-weight: 100;
+  .text-shadow(none);
+}
+h2{
+  text-align: center;
+  font-size: 4rem;
+}
+h3{
+  font-size: 2rem;
+}
+p{
+  font-size: 1.3rem;
+}
+section{
+
+  padding-top: 4rem ;
+  padding-bottom: 4rem;
+}
+label{
+  font-size: 1rem;
+}
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"]{
+  font-size: 1.7rem;
+  height: auto;
+}
+.lato{
+  font-family: 'Lato';
+}
+.tac{
+  text-align: center;
+}
+.fwb{
+  font-weight: bold;
+}
+.p2{
+  padding: 2rem;
+}
+.button{
+  font-family:@ff ;
+  background: @green;
+  border-radius: 70px;
+  &[disabled]{
+    background: @green;
+    &:hover{
+      background: darken(@green, 10%);
+    }
+  }
+  &:hover{
+    background: darken(@green, 10%);
+  }
+  &:focus{
+    background-color: darken(@green, 10%);
+  }
+}
+#banner{
+  padding: 7rem 0;
+  .column:first-child{
+    margin-top: 3rem;
+  }
+  .subtitle{
+    margin: 0 auto;
+    width: 90%;
+    display: block;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem 1rem;
+    border-radius: 5rem;
+    background: #FAFAFA;
+    i{
+      display: block;
+      margin-bottom: -10px;
+      font-size: 2rem;
+      color: #CACACA;
+    }
+  }
+}
+
+#features{
+  width: 100%;
+  background: #F3F3F3;
+  color:#2c3e50;
+  .column{
+    text-align: center;
+    &:after{
+      content: '';
+      width: 36%;
+      height: 1px;
+      display: block;
+      border-bottom: 1px solid fade(#2c3e50, 20%);
+      margin: 3rem auto;
+    }
+  }
+  .icon{
+    @sz:7rem;
+    background: @green;
+    .box-shadow(inset 0 0 10px 2px rgba(0, 0, 0, 0.2));
+    color: white;
+    width: @sz;
+    height: @sz;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    font-size: @sz/2;
+    line-height: @sz;
+  }
+}
+
+.form-row{
+  background: #F1F1F1;
+  padding: 0.9rem 3rem;
+  border-radius: 0.6rem;
+  margin-top: 2rem;
+  border: 1px dashed #DBDBDB;
+  .transition(all .5s ease-out);
+  label{
+    position: relative;
+    i{
+      position: absolute;
+      font-size: 2.3rem;
+      top: 1.3rem;
+      right: 0.4rem;
+    }
+  }
+}
+
+.thanks{
+  background: @green;
+  .thanks-msg{
+    font-size: 1.4rem;
+    color: white;
+    i{
+      display: block;
+      color: white;
+      font-size: 4rem;
+    }
+  }
 }
