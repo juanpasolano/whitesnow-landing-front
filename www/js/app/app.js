@@ -4,7 +4,7 @@ var ngApp =  angular.module('landing', ['ngRoute']);
 ngApp.config([ '$routeProvider',
     function($routeProvider){
         $routeProvider
-            .when('/home', {
+            .when('/', {
                 templateUrl: 'partials/home.html',
                 controller: 'LandingCtrl'
             })
@@ -21,7 +21,7 @@ ngApp.config([ '$routeProvider',
                 controller: 'SendInviteCtrl'
             })
             .otherwise({
-                redirectTo:'/home'
+                redirectTo:'/'
             });
     }
 ]);
