@@ -20,6 +20,9 @@ ngApp.config([ '$routeProvider',
                 templateUrl: 'partials/invites/compose.html',
                 controller: 'SendInviteCtrl'
             })
+            .when('/terms', {
+                templateUrl: 'partials/terms.html'
+            })
             .otherwise({
                 redirectTo:'/'
             });
