@@ -29,8 +29,8 @@ ngApp.config([ '$routeProvider',
     }
 ]);
 
-ngApp.controller('MainCtrl', [ '$rootScope',
-    function($rootScope) {
+ngApp.controller('MainCtrl', [ '$scope','$anchorScroll', '$location', '$rootScope',
+    function($scope, $anchorScroll, $location, $rootScope) {
 
         var hostname = window.location.hostname;
         $rootScope.server;
@@ -38,6 +38,13 @@ ngApp.controller('MainCtrl', [ '$rootScope',
             $rootScope.server = 'http://localhost:1337/';
         } else {
             $rootScope.server = 'http://vetheroes.co:1337/'
+        }
+
+        $scope.scrollTo = function(to){
+            console.log(to);
+            $location.hash(to);
+            // call $anchorScroll()
+            $anchorScroll();
         }
     }
 ]);
