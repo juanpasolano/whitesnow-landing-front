@@ -1,103 +1,7 @@
 @import 'mixins.less';
 @import 'icons-font.less';
-@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400);
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300, 400);
-
-/*This is the almighty clearfix*/
-.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
-* html .clearfix { zoom: 1; } /* IE6 */
-*:first-child+html .clearfix { zoom: 1; } /* IE7 */
-
-/*Some helper spacers*/
-.spacer (@index) when (@index > 0) {
-  .spacer-@{index} {
-    width: 100%;
-    height: 10px*@index;
-  }
-  .spacer(@index - 1);
-}
-.spacer(8);
-
-/*NG-CLOACK for angular hidding before it is time to dance*/
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
-
-@ff: 'Lato', "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
-@green:#59c063;
-@green:#3aba8f;
-@blue:#2ECBFD;
-
-html{
-  font-size: 100%;
-  font-family: @ff;
-}
-body{
-  font-family: @ff;
-  font-weight: 100;
-}
-h1,h2,h3,h4,h5{
-  font-weight: 300;
-  .text-shadow(none);
-}
-h2{
-  text-align: center;
-  font-size: 3rem;
-}
-h3{
-  font-size: 2rem;
-}
-p{
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  font-weight: 300;
-}
-section{
-  padding-top: 4rem ;
-  padding-bottom: 4rem;
-}
-label{
-  font-size: 1rem;
-}
-hr{
-  width: 80%;
-  border: 1px solid #FFF;
-  margin: 50px auto;
-}
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="week"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"]{
-  font-size: 1.7rem;
-  height: auto;
-}
-.lato{
-  font-family: 'Lato';
-}
-.tac{
-  text-align: center;
-}
-.fwb{
-  font-weight: 400;
-}
-.fwl{
-  font-weight: 100;
-}
-.ttu{
-  text-transform: uppercase;
-}
-.p2{
-  padding: 2rem;
-}
+@import "base.less";
+@import "helpers.less";
 .button{
   font-family:@ff ;
   border-radius: 70px;
@@ -179,17 +83,26 @@ header{
 #features{
   width: 100%;
   background: #F3F3F3;
-  background: url(../../img/pat.png);
+  background: url(../img/pat.png);
   color:#2c3e50;
   .large-6{
     padding: 0 70px;
   }
 }
 #forVets{
-  // background: #3c3c3c;
-  background: #f7f7f7;
-  *{
-    // color:white;
+  overflow: hidden;
+}
+#forOwners{
+  background: #fafafa;
+  position: relative;
+  margin-top: 50px;
+  .trees{
+    background: url('../img/trees.png') no-repeat;
+    background-size: cover;
+    top: -240px;
+    height:240px;
+    width: 100%;
+    position: absolute;
   }
 }
 .column-with-line{
@@ -200,25 +113,39 @@ header{
       height: 1px;
       display: block;
       border-bottom: 1px solid fade(#2c3e50, 20%);
-      margin: 3rem auto;
+      margin: 2rem auto;
     }
   }
-.icon{
-  @sz:5rem;
-  background: @green;
-  &.blue{
-    background: @blue;
+
+
+
+
+
+
+
+
+.feature{
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 50px;
+  i{
+    position: absolute;
+    left: 0;
+    &:before{
+      font-size: 30px;
+    }
   }
-  .box-shadow(inset 0 0 10px 2px rgba(0, 0, 0, 0.2));
-  color: white;
-  width: @sz;
-  height: @sz;
-  display: inline-block;
-  text-align: center;
-  border-radius: 50%;
-  font-size: @sz/2;
-  line-height: @sz;
+  &.green i{
+    color: @green;
+  }
+  &.blue i{
+    color: @blue;
+  }
 }
+
+
+
+
 .form-row{
   background: #F1F1F1;
   padding: 0.9rem 3rem;
@@ -247,5 +174,12 @@ header{
       color: white;
       font-size: 4rem;
     }
+  }
+}
+
+@media only screen {
+  .phone-frame{
+    height: 200px;
+    overflow: hidden;
   }
 }
