@@ -78,7 +78,7 @@ ngApp.controller('LandingCtrl', [ '$scope', '$rootScope', '$routeParams', '$http
                     .success(function(data){
                         $scope.formActive = false;
                         ga('send', 'event', 'form', 'submit', 'invite_confirm', 0);
-                        window.optimizely.push(["submitFormButton", "submit"]);
+                        window.optimizely.push(["trackEvent", "submitFormButton"]);
                     })
                     .error(function(err){
                         console.log(err);
@@ -89,7 +89,7 @@ ngApp.controller('LandingCtrl', [ '$scope', '$rootScope', '$routeParams', '$http
                     .success(function(data){
                         $scope.formActive = false;
                         ga('send', 'event', 'form', 'submit', 'invite_request', 0);
-                        window.optimizely.push(["submitFormButton", "submit"]);
+                        window.optimizely.push(["trackEvent", "submitFormButton"]);
                     })
                     .error(function(err){
                         console.log(err);
