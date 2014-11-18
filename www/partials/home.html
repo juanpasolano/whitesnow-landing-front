@@ -218,10 +218,10 @@
         <input type="number" name="tel" ng-model="inviteInfo.tel" required>
 
         <div class="tac">
-          <button ng-show="isInvited" type="submit" class="button green" ng-disabled="form.$invalid">QUIERO
+          <button id="submitFormButton" ng-if="isInvited" type="submit" class="button green" ng-disabled="form.$invalid">QUIERO
             PREINSCRIBIRME!
           </button>
-          <button ng-show="!isInvited" type="submit" class="button green" ng-disabled="form.$invalid">QUIERO ESTAR EN LA
+          <button id="submitFormButton" ng-if="!isInvited" type="submit" class="button green" ng-disabled="form.$invalid">QUIERO ESTAR EN LA
             LISTA!
           </button>
           <br>Haciendo click en este botón, estas aceptando nuestras <a href="#/terms">Políticas de privacidad</a>
