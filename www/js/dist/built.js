@@ -55,6 +55,7 @@ ngApp.controller('LandingCtrl', [ '$scope', '$rootScope', '$routeParams', '$http
       /**
        * Activates optimizely variations manually
        */
+      console.log('activate optimizely');
       window.optimizely.push(["activate", 2197810604]);
 
         var inviteId = $routeParams.id;
