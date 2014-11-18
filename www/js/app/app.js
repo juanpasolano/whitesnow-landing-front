@@ -149,11 +149,11 @@ ngApp.directive('mbIconValidation',['$rootScope', '$timeout', '$parse',
     function($rootScope, $timeout, $parse){
         return{
             scope:{
-                validationObj: '=mbIconValidation',
+                validationObj: '=mbIconValidation'
             },
             link: function(scope, element, attrs){
-                var okIcon = '&#xe0d9;';
-                var failIcon = '&#xe0e0;';
+                var okIcon = 'l';
+                var failIcon = 'm';
                 scope.$watchCollection('[validationObj.$valid, validationObj.$pristine]', function(n,o){
                     if(scope.validationObj){
                         if(scope.validationObj.$valid === true && scope.validationObj.$pristine === false){

@@ -65,6 +65,12 @@
 .icon-heart-plus:before {
   content: "k";
 }
+.icon-check-circle-2:before {
+  content: "l";
+}
+.icon-delete-3:before {
+  content: "m";
+}
 html {
   font-size: 100%;
   font-family: 'Lato', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -351,9 +357,11 @@ header nav a {
 }
 .form-row label i {
   position: absolute;
-  font-size: 2.3rem;
-  top: 1.3rem;
+  font-size: 1.8rem;
+  top: 1.9rem;
   right: 0.4rem;
+  font-family: "vetheroes-landing-icons" !important;
+  font-style: normal;
 }
 .thanks {
   background: #3aba8f;
