@@ -52,6 +52,11 @@ ngApp.controller('MainCtrl', [ '$scope','$anchorScroll', '$location', '$rootScop
 ngApp.controller('LandingCtrl', [ '$scope', '$rootScope', '$routeParams', '$http',
     function($scope, $rootScope, $routeParams,  $http){
 
+      /**
+       * Activates optimizely variations manually
+       */
+      window.optimizely.push(["activate", 2197810604]);
+
         var inviteId = $routeParams.id;
         var inviteToken = $routeParams.token;
         $scope.inviteInfo = {};
