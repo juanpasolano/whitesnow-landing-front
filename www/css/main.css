@@ -83,6 +83,9 @@
 .icon-delete-3:before {
   content: "m";
 }
+.icon-mail-inbox:before {
+  content: "n";
+}
 html {
   font-size: 100%;
   font-family: 'Lato', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -168,6 +171,12 @@ input[type="url"] {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.white {
+  color: white;
+}
+.align-center {
+  text-align: center;
 }
 /*This is the almighty clearfix*/
 .clearfix:after {
@@ -354,7 +363,7 @@ header nav a {
   color: #2ecbfd;
 }
 .form-row {
-  background: #F1F1F1;
+  background: #fff;
   padding: 0.9rem 3rem;
   border-radius: 0.6rem;
   margin-top: 2rem;
