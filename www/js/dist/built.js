@@ -57,51 +57,54 @@ ngApp.controller('LandingCtrl', [ '$scope', '$rootScope', '$routeParams', '$http
        */
       console.log('activate optimizely');
       window.optimizely.push(["activate", 2197810604]);
-
-        var inviteId = $routeParams.id;
-        var inviteToken = $routeParams.token;
-        $scope.inviteInfo = {};
-        $scope.isInvited =  false;
-        $scope.formActive =  true;
-
-        /*
-        * If we have an invitation Id go get the damn information
-        * */
-        if (inviteId) {
-            $http.get($rootScope.server+'invite/getsafe/'+inviteId+'/'+inviteToken).success(function(data){
-                $scope.inviteInfo = data;
-                $scope.isInvited = true;
-                if(data.status == 2){
-                    $scope.formActive =  false;
-                }
-            });
-        }
-
-        $scope.sendForm = function(){
-            console.log('sending form');
-            if ($scope.isInvited) {
-                $http.post($rootScope.server+'invite/confirm/' + inviteId, $scope.inviteInfo)
-                    .success(function(data){
-                        $scope.formActive = false;
-                        ga('send', 'event', 'form', 'submit', 'invite_confirm', 0);
-                        window.optimizely.push(["trackEvent", "submitFormButton"]);
-                    })
-                    .error(function(err){
-                        console.log(err);
-                    });
-            }else{
-                $scope.inviteInfo.status = 3;
-                $http.post($rootScope.server+'invite/request', $scope.inviteInfo)
-                    .success(function(data){
-                        $scope.formActive = false;
-                        ga('send', 'event', 'form', 'submit', 'invite_request', 0);
-                        window.optimizely.push(["trackEvent", "submitFormButton"]);
-                    })
-                    .error(function(err){
-                        console.log(err);
-                    });
-            }
-        };
+      $scope.optimizelySubmitForm = function(){
+        window.optimizely.push(["trackEvent", "submitFormButton"]);
+      }
+//
+//        var inviteId = $routeParams.id;
+//        var inviteToken = $routeParams.token;
+//        $scope.inviteInfo = {};
+//        $scope.isInvited =  false;
+//        $scope.formActive =  true;
+//
+//        /*
+//        * If we have an invitation Id go get the damn information
+//        * */
+//        if (inviteId) {
+//            $http.get($rootScope.server+'invite/getsafe/'+inviteId+'/'+inviteToken).success(function(data){
+//                $scope.inviteInfo = data;
+//                $scope.isInvited = true;
+//                if(data.status == 2){
+//                    $scope.formActive =  false;
+//                }
+//            });
+//        }
+//
+//        $scope.sendForm = function(){
+//            console.log('sending form');
+//            if ($scope.isInvited) {
+//                $http.post($rootScope.server+'invite/confirm/' + inviteId, $scope.inviteInfo)
+//                    .success(function(data){
+//                        $scope.formActive = false;
+//                        ga('send', 'event', 'form', 'submit', 'invite_confirm', 0);
+//                        window.optimizely.push(["trackEvent", "submitFormButton"]);
+//                    })
+//                    .error(function(err){
+//                        console.log(err);
+//                    });
+//            }else{
+//                $scope.inviteInfo.status = 3;
+//                $http.post($rootScope.server+'invite/request', $scope.inviteInfo)
+//                    .success(function(data){
+//                        $scope.formActive = false;
+//                        ga('send', 'event', 'form', 'submit', 'invite_request', 0);
+//                        window.optimizely.push(["trackEvent", "submitFormButton"]);
+//                    })
+//                    .error(function(err){
+//                        console.log(err);
+//                    });
+//            }
+//        };
     }
 ]);
 
