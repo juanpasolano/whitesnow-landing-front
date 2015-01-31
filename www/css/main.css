@@ -86,6 +86,21 @@
 .icon-mail-inbox:before {
   content: "n";
 }
+.icon-facebook:before {
+  content: "o";
+}
+.icon-linkedin:before {
+  content: "p";
+}
+.icon-skype:before {
+  content: "q";
+}
+.icon-twitter-alt:before {
+  content: "r";
+}
+.icon-youtube:before {
+  content: "s";
+}
 html {
   font-size: 100%;
   font-family: 'Lato', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -406,6 +421,27 @@ header .button {
   display: block;
   border-bottom: 1px solid rgba(44, 62, 80, 0.2);
   margin: 2rem auto;
+}
+.social-icons {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+.social-icons a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  border-radius: 52%;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  margin-bottom: 3px;
+}
+.social-icons a.icon-facebook {
+  background: #3B5998;
+}
+.social-icons a.icon-twitter-alt {
+  background: #5EA9DD;
 }
 .feature {
   position: relative;
