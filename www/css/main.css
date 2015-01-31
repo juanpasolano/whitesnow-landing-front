@@ -93,6 +93,7 @@ html {
 body {
   font-family: 'Lato', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -256,6 +257,42 @@ input[type="url"] {
 .button.green:focus {
   background-color: #2e9371;
 }
+.button.green-outline {
+  background: white;
+  border: 2px solid #3aba8f;
+  color: #3aba8f;
+}
+.button.green-outline[disabled] {
+  background: white;
+}
+.button.green-outline[disabled]:hover {
+  background: #e6e6e6;
+}
+.button.green-outline:hover {
+  background: #3aba8f;
+  color: white;
+}
+.button.green-outline:focus {
+  background-color: #3aba8f, 10%;
+  color: white;
+}
+.button.white {
+  background: white;
+  color: #3aba8f;
+}
+.button.white[disabled] {
+  background: white;
+}
+.button.white[disabled]:hover {
+  background: #e6e6e6;
+}
+.button.white:hover {
+  background: #e6e6e6;
+  color: #1a1a1a;
+}
+.button.white:focus {
+  background-color: #e6e6e6;
+}
 .button.blue {
   background: #2ecbfd;
 }
@@ -284,8 +321,26 @@ header nav a {
   color: black;
   text-decoration: none;
   font-weight: bold;
-  padding: 15px 20px;
+  padding: 15px 9px 9px;
   display: inline-block;
+  margin-right: 25px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid white;
+}
+header nav a:last-child {
+  margin-right: 0;
+}
+header nav a:hover {
+  border-bottom: 2px solid #3aba8f;
+}
+header nav a.active {
+  border-bottom: 2px solid #3aba8f;
+}
+header .button {
+  margin-bottom: 0;
 }
 #banner {
   padding: 7rem 0;
