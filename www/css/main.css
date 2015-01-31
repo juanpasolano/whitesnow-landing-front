@@ -215,6 +215,22 @@ input[type="url"] {
 }
 /* IE7 */
 /*Some helper spacers*/
+.spacer-12 {
+  width: 100%;
+  height: 120px;
+}
+.spacer-11 {
+  width: 100%;
+  height: 110px;
+}
+.spacer-10 {
+  width: 100%;
+  height: 100px;
+}
+.spacer-9 {
+  width: 100%;
+  height: 90px;
+}
 .spacer-8 {
   width: 100%;
   height: 80px;
@@ -364,13 +380,13 @@ header nav a.active {
 header .button {
   margin-bottom: 0;
 }
-#banner {
+#home {
   padding: 7rem 0;
 }
-#banner .column:first-child {
+#home .column:first-child {
   margin-top: 3rem;
 }
-#banner .subtitle {
+#home .subtitle {
   margin: 0 auto;
   width: 90%;
   display: block;
@@ -380,30 +396,30 @@ header .button {
   border-radius: 5rem;
   background: #FAFAFA;
 }
-#banner .subtitle i {
+#home .subtitle i {
   display: block;
   margin-bottom: -10px;
   font-size: 2rem;
   color: #CACACA;
 }
-#features {
+#what {
   width: 100%;
   background: #F3F3F3;
   background: url(../img/pat.png);
   color: #2c3e50;
 }
-#features .large-6 {
+#what .large-6 {
   padding: 0 70px;
 }
-#forVets {
+#vets {
   overflow: hidden;
 }
-#forOwners {
+#owners {
   background: #fafafa;
   position: relative;
   margin-top: 50px;
 }
-#forOwners .trees {
+#owners .trees {
   background: url('../img/trees.png') no-repeat;
   background-size: cover;
   top: -240px;
@@ -426,6 +442,7 @@ header .button {
   position: fixed;
   bottom: 10px;
   right: 10px;
+  z-index: 999;
 }
 .social-icons a {
   display: block;
