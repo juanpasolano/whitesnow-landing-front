@@ -346,14 +346,28 @@ input[type="url"] {
 .button.blue:focus {
   background-color: #02bbf6;
 }
+.notification {
+  z-index: 1000;
+  background: #2ecbfd;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 1px;
+}
+.notification > h4 {
+  margin: 14px;
+  font-weight: 500;
+}
 header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
   background: white;
-  padding: 10px;
   border-bottom: 1px solid #f4f4f4;
+}
+header > .row {
+  padding: 10px;
 }
 header nav a {
   color: black;
